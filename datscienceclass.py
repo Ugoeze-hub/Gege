@@ -7,4 +7,5 @@ SURVEY = {
     'Favourite Color' : ['Purple', 'Blue', 'Red']
 }
 df_survey = pd.DataFrame(SURVEY)
+print()
 print(df_survey)
