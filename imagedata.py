@@ -19,7 +19,7 @@ def download_images(image_urls, folder_name):
 # Function to scrape image URLs from Google Images using BeautifulSoup
 def scrape_images(query, num_images=10):
     # Prepare the Google search URL
-    search_url = f"https://www.you.com/search?q={query}&tbm=isch"
+    search_url = f"https://www.google.com/search?q={query}&tbm=isch"
     
     # Send an HTTP request to get the content of the search results page
     headers = {
@@ -28,11 +28,10 @@ def scrape_images(query, num_images=10):
     
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
-    print('All code:', soup)
-    
+      
     # Find all image elements ('img' tags)
     img_elements = soup.find_all('img')
-    print('image links:', img_elements)
+  
     # Extract the 'src' attribute of each image tag (thumbnail URLs)
     image_urls = []
     for img in img_elements:
