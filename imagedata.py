@@ -28,6 +28,7 @@ def scrape_images(query, num_images=10):
     
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
+    print('All code:', soup )
       
     # Find all image elements ('img' tags)
     img_elements = soup.find_all('img')
