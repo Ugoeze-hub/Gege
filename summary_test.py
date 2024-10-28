@@ -3,6 +3,10 @@ for v in range(2):
     a_list.insert(-1, a_list[v])
 print(a_list)
 
+a = [1,2,3,4]
+a.insert(1, 5)
+print(a)
+
 lst = [i for i in range(-1, -2)]
 print(len(lst))
 
@@ -18,7 +22,6 @@ print(tup)
 x = 1
 y = 2
 x,y,z = x,x,y
-print(x,y,z)
 z,y,z = x,y,z 
 print(x,y,z)
 
