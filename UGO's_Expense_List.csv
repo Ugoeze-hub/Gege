@@ -1,0 +1,5 @@
+,Expense,Price,Amount,Total Price,Category,Description,total_expense
+1,plantain,100,2,1000,need,food,100.0
+2,potato,200,5,1000,need,food,300.0
+3,race car,1000,10,1000,want,toy,1300.0
+4,aquafina water,50,20,1000,need,water,1350.0

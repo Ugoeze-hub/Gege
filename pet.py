@@ -88,18 +88,26 @@ def main():
 
     if choice == '1':
       expense = input('Enter an expense to add: ')
+      
       try:
         price = int(input('Enter the price of the expense: '))
       except ValueError:
         print('Price must be an integer')
         continue
+      
       try:
         amount = int(input('Enter the amount of the expense: '))
       except ValueError:
         print('Amount must be an integer')
         continue
-      if amount > 1:
-        expense_list['Total Price'] = price * amount
+      
+      # if amount > 1:
+      #   expense_list['Total Price'] = (price * amount)
+      for price_value in expense_list['Price']:
+        price_index = expense_list['Price'].index(price_value)
+        amount_value = expense_list['Amount'][price_index] 
+        expense_list['Total Price'][price_index] = (price_value * amount_value)
+        
       category = input('Is your expense a need or want: ')
       if category != 'want' and category != 'need':
         print('Your expense can only be a need or a want')
@@ -108,8 +116,10 @@ def main():
           category = input('Enter custom category name: ')
         else:
           continue
+        
       description = input('Describe your expense: ')
-      Username.add_expense(expense, amount, category, description)
+      
+      Username.add_expense(expense, price, amount, category, description)
 
     elif choice == '2':
       expense = input('Enter an expense to delete: ')
