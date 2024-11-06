@@ -108,13 +108,20 @@ def main():
           continue
         
       
-      # if amount > 1:
-      #   expense_list['Total Price'] = (price * amount)
-      for price_value in expense_list['Price']:
+      # # # if amount > 1:
+      # # #   expense_list['Total Price'] = (price * amount)
+      for i, price_value in enumerate(expense_list['Price']):
         price_index = expense_list['Price'].index(price_value)
         amount_value = expense_list['Amount'][price_index] 
         expense_list['Total Price'][price_index] = (price_value * amount_value)
-        
+      
+      # for price_value, amount_value in zip(expense_list['Price'], expense_list['Amount']):
+      #   expense_list['Total Price'] = expense_list['Price'] * expense_list['Amount']
+      
+      # for price_value, amount_value in zip(expense_list['Price'], expense_list['Amount']):
+      #   total_price = price_value * amount_value
+      #   expense_list['Total Price'].append(total_price)  # Or update the list as needed
+            
       category = input('Is your expense a need or want: ')
       if category != 'want' and category != 'need':
         print('Your expense can only be a need or a want')
