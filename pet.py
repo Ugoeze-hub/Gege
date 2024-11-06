@@ -74,7 +74,7 @@ class ExpenseTracker:
 
 def main():
   print('Welcome to your Personal Expense Tracker')
-  User_name = input('Please enter your name of choice: ').upper()
+  User_name = input('Please enter your name of choice: ').title()
   Username = ExpenseTracker(f'{User_name}\'s')
   print(Username)
 
@@ -89,17 +89,24 @@ def main():
     if choice == '1':
       expense = input('Enter an expense to add: ')
       
-      try:
-        price = int(input('Enter the price of the expense: '))
-      except ValueError:
-        print('Price must be an integer')
-        continue
+      while True:
       
-      try:
-        amount = int(input('Enter the amount of the expense: '))
-      except ValueError:
-        print('Amount must be an integer')
-        continue
+        try:
+          price = int(input('Enter the price of the expense: '))
+          break
+        except ValueError:
+          print('Price must be an integer')
+          continue
+      
+      while True:
+          
+        try:
+          amount = int(input('Enter the amount of the expense: '))
+          break
+        except ValueError:
+          print('Amount must be an integer')
+          continue
+        
       
       # if amount > 1:
       #   expense_list['Total Price'] = (price * amount)
